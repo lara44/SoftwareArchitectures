@@ -7,7 +7,7 @@ namespace LayeredArchitecture.WebApi.Controllers
 {
     [ApiController]
     [Route("api/productos")]
-    public class ProductController : Controller
+    public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
 
