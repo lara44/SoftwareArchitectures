@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LayeredArchitecture", "LayeredArchitecture", "{4CE1F949-F9E8-494E-9913-8698864141EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayeredArchitecture.WebApi", "LayeredArchitecture\LayeredArchitecture.WebApi\LayeredArchitecture.WebApi.csproj", "{CFE4F7D5-8961-4077-8728-E1188E7FAD79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFE4F7D5-8961-4077-8728-E1188E7FAD79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE4F7D5-8961-4077-8728-E1188E7FAD79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE4F7D5-8961-4077-8728-E1188E7FAD79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE4F7D5-8961-4077-8728-E1188E7FAD79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CFE4F7D5-8961-4077-8728-E1188E7FAD79} = {4CE1F949-F9E8-494E-9913-8698864141EC}
+	EndGlobalSection
+EndGlobal

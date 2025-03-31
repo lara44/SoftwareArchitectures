@@ -1,0 +1,6 @@
+@LayeredArchitecture.WebApi_HostAddress = http://localhost:5299
+
+GET {{LayeredArchitecture.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
