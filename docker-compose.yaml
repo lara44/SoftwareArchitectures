@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   SoftwareArchitectures-db:
     container_name: SoftwareArchitectures-db
