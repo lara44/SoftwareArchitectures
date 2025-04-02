@@ -1,5 +1,5 @@
 
-using LayeredArchitecture.WebApi.Entities;
+using LayeredArchitecture.WebApi.Data.Entities;
 using LayeredArchitecture.WebApi.Repositories.Interfaces;
 using LayeredArchitecture.WebApi.Services.Interfaces;
 
@@ -17,11 +17,11 @@ namespace LayeredArchitecture.WebApi.Services
 
         public async Task CrearProductoAsync(string name, decimal price)
         {
-            var product = new Product { Name = name, Price = price };
+            var product = new ProductEntity { Name = name, Price = price };
             await _productRepository.AddAsync(product);
         }
 
-        public async Task<List<Product>> ObtenerProductosAsync()
+        public async Task<IEnumerable<ProductEntity>> ObtenerProductosAsync()
         {
             return await _productRepository.GetAllAsync();
         }
