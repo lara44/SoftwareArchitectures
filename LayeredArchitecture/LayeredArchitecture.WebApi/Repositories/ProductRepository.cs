@@ -1,5 +1,5 @@
 using LayeredArchitecture.WebApi.Data;
-using LayeredArchitecture.WebApi.Entities;
+using LayeredArchitecture.WebApi.Data.Entities;
 using LayeredArchitecture.WebApi.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,13 +12,13 @@ namespace LayeredArchitecture.WebApi.Repositories
         {
             _context = context;
         }
-        public async Task AddAsync(Product product)
+        public async Task AddAsync(ProductEntity product)
         {
             await _context.AddAsync(product);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<List<Product>> GetAllAsync()
+        public async Task<IEnumerable<ProductEntity>> GetAllAsync()
         {
             var products = await _context.Products.ToListAsync();
             return products;

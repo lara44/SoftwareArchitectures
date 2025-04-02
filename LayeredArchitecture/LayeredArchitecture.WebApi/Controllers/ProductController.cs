@@ -1,5 +1,5 @@
 
-using LayeredArchitecture.WebApi.Entities;
+using LayeredArchitecture.WebApi.Data.Entities;
 using LayeredArchitecture.WebApi.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,7 +7,7 @@ namespace LayeredArchitecture.WebApi.Controllers
 {
     [ApiController]
     [Route("api/productos")]
-    public class ProductController : Controller
+    public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
 
@@ -19,7 +19,7 @@ namespace LayeredArchitecture.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CrearProducto([FromBody] Product producto)
+        public async Task<IActionResult> CrearProducto([FromBody] ProductEntity producto)
         {
             await _productService.CrearProductoAsync(producto.Name!, producto.Price);
             return Ok();
