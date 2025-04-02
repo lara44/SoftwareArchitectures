@@ -1,4 +1,5 @@
 using HexagonalArchitecture.Core.Application.Services.Product;
+using HexagonalArchitecture.Core.Application.Services.Product.GetProductAll;
 using HexagonalArchitecture.Core.Application.Services.ProductService.Interfaces;
 using HexagonalArchitecture.Core.Domain.Product.Repository;
 using HexagonalArchitecture.Infrastructure.Data;
@@ -18,6 +19,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICreateProductHandler, CreateProductHandler>();
+builder.Services.AddScoped<IGetProductAllQuery, GetProductAllQuery>();
 
 var app = builder.Build();
 
@@ -29,4 +31,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.MapControllers();
 app.Run();
