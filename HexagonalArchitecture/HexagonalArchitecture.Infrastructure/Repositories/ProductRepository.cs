@@ -1,6 +1,6 @@
 
-using HexagonalArchitecture.Core.Domain.Product;
-using HexagonalArchitecture.Core.Domain.Product.Repository;
+using HexagonalArchitecture.Domain.Product;
+using HexagonalArchitecture.Domain.Product.Repository;
 using HexagonalArchitecture.Infrastructure.Data;
 using HexagonalArchitecture.Infrastructure.Mappers;
 using Microsoft.EntityFrameworkCore;

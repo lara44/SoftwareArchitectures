@@ -1,6 +1,6 @@
 
 
-using HexagonalArchitecture.Core.Domain.Product;
+using HexagonalArchitecture.Domain.Product;
 using HexagonalArchitecture.Infrastructure.Data.Entities;
 
 namespace HexagonalArchitecture.Infrastructure.Mappers

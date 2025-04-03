@@ -1,5 +1,5 @@
 
-namespace HexagonalArchitecture.Core.Domain.Product.Repository
+namespace HexagonalArchitecture.Domain.Product.Repository
 {
     public interface IProductRepository
     {

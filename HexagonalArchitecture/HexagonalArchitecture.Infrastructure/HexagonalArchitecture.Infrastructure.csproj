@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\HexagonalArchitecture.Core\HexagonalArchitecture.Core.csproj" />
+    <ProjectReference Include="..\HexagonalArchitecture.Domain\HexagonalArchitecture.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

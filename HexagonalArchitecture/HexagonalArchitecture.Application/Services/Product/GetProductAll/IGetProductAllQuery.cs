@@ -1,6 +1,6 @@
 
 
-namespace HexagonalArchitecture.Core.Application.Services.Product.GetProductAll
+namespace HexagonalArchitecture.Application.Services.Product.GetProductAll
 {
     public interface IGetProductAllQuery
     {

@@ -1,5 +1,5 @@
 
-namespace HexagonalArchitecture.Core.Domain.Product
+namespace HexagonalArchitecture.Domain.Product
 {
     public sealed class Product
     {

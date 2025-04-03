@@ -1,9 +1,7 @@
 
+using HexagonalArchitecture.Domain.Product.Repository;
 
-
-using HexagonalArchitecture.Core.Domain.Product.Repository;
-
-namespace HexagonalArchitecture.Core.Application.Services.Product.GetProductAll
+namespace HexagonalArchitecture.Application.Services.Product.GetProductAll
 {
     public class GetProductAllQuery : IGetProductAllQuery
     {

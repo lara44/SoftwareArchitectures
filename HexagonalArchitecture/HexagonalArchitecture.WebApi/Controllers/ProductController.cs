@@ -1,9 +1,8 @@
 
+using HexagonalArchitecture.Application.Services.Product.CreateProduct;
+using HexagonalArchitecture.Application.Services.Product.GetProductAll;
 using HexagonalArchitecture.Core.Application.Services.Product.CreateProduct;
-using HexagonalArchitecture.Core.Application.Services.Product.GetProductAll;
-using HexagonalArchitecture.Core.Application.Services.ProductService.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace HexagonalArchitecture.WebApi.Controllers
 {
@@ -11,20 +10,20 @@ namespace HexagonalArchitecture.WebApi.Controllers
     [Route("hexagonal/api/productos")]
     public class ProductController : ControllerBase
     {
-        private readonly ICreateProductHandler _createProductHandler;
+        private readonly ICreateProductCommandHandler _createProductCommandHandler;
         private readonly IGetProductAllQuery _getProductAllQuery;
         public ProductController(
-            ICreateProductHandler createProductHandler,
+            ICreateProductCommandHandler createProductHandler,
             IGetProductAllQuery getProductAllQuery
         )
         {
-            _createProductHandler = createProductHandler;
+            _createProductCommandHandler = createProductHandler;
             _getProductAllQuery = getProductAllQuery;
         }
         [HttpPost]
-        public async Task<IActionResult> CrearProducto([FromBody] CreateProduct createProduct)
+        public async Task<IActionResult> CrearProducto([FromBody] CreateProductCommand createProduct)
         {
-            await _createProductHandler.Execute(createProduct);
+            await _createProductCommandHandler.Execute(createProduct);
             return Ok();
         }
         [HttpGet]

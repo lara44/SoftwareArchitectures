@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HexagonalArchitecture.Infrastructure\HexagonalArchitecture.Infrastructure.csproj" />
+    <ProjectReference Include="..\HexagonalArchitecture.Application\HexagonalArchitecture.Application.csproj" />
   </ItemGroup>
 
 </Project>

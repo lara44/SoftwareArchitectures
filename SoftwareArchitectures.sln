@@ -11,9 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HexagonalArchitecture", "He
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalArchitecture.WebApi", "HexagonalArchitecture\HexagonalArchitecture.WebApi\HexagonalArchitecture.WebApi.csproj", "{4D54F698-2983-4B00-9FA1-03ABBDBC107E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalArchitecture.Core", "HexagonalArchitecture\HexagonalArchitecture.Core\HexagonalArchitecture.Core.csproj", "{C44FB09E-CCCA-47B3-B2C3-3D7419E5C99F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalArchitecture.Infrastructure", "HexagonalArchitecture\HexagonalArchitecture.Infrastructure\HexagonalArchitecture.Infrastructure.csproj", "{90D79AF2-FA12-49E9-8165-26FF100B2F8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalArchitecture.Application", "HexagonalArchitecture\HexagonalArchitecture.Application\HexagonalArchitecture.Application.csproj", "{0AFAAEEB-3DDB-4A2F-B132-11635DD4691B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalArchitecture.Domain", "HexagonalArchitecture\HexagonalArchitecture.Domain\HexagonalArchitecture.Domain.csproj", "{4372A601-E3C4-46B1-A25D-C6FC5C92AEFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,19 +34,24 @@ Global
 		{4D54F698-2983-4B00-9FA1-03ABBDBC107E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D54F698-2983-4B00-9FA1-03ABBDBC107E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D54F698-2983-4B00-9FA1-03ABBDBC107E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C44FB09E-CCCA-47B3-B2C3-3D7419E5C99F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C44FB09E-CCCA-47B3-B2C3-3D7419E5C99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C44FB09E-CCCA-47B3-B2C3-3D7419E5C99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C44FB09E-CCCA-47B3-B2C3-3D7419E5C99F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{90D79AF2-FA12-49E9-8165-26FF100B2F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{90D79AF2-FA12-49E9-8165-26FF100B2F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90D79AF2-FA12-49E9-8165-26FF100B2F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90D79AF2-FA12-49E9-8165-26FF100B2F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AFAAEEB-3DDB-4A2F-B132-11635DD4691B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AFAAEEB-3DDB-4A2F-B132-11635DD4691B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AFAAEEB-3DDB-4A2F-B132-11635DD4691B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AFAAEEB-3DDB-4A2F-B132-11635DD4691B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4372A601-E3C4-46B1-A25D-C6FC5C92AEFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4372A601-E3C4-46B1-A25D-C6FC5C92AEFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4372A601-E3C4-46B1-A25D-C6FC5C92AEFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4372A601-E3C4-46B1-A25D-C6FC5C92AEFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CFE4F7D5-8961-4077-8728-E1188E7FAD79} = {4CE1F949-F9E8-494E-9913-8698864141EC}
 		{4D54F698-2983-4B00-9FA1-03ABBDBC107E} = {112E2579-E68A-4161-86D8-4D5041249943}
-		{C44FB09E-CCCA-47B3-B2C3-3D7419E5C99F} = {112E2579-E68A-4161-86D8-4D5041249943}
 		{90D79AF2-FA12-49E9-8165-26FF100B2F8C} = {112E2579-E68A-4161-86D8-4D5041249943}
+		{0AFAAEEB-3DDB-4A2F-B132-11635DD4691B} = {112E2579-E68A-4161-86D8-4D5041249943}
+		{4372A601-E3C4-46B1-A25D-C6FC5C92AEFF} = {112E2579-E68A-4161-86D8-4D5041249943}
 	EndGlobalSection
 EndGlobal
