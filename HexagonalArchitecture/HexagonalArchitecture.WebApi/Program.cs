@@ -1,8 +1,7 @@
-using HexagonalArchitecture.Application.Services.Product.CreateProduct;
+
 using HexagonalArchitecture.Application.Services.Product.GetProductAll;
-using HexagonalArchitecture.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
 using HexagonalArchitecture.Infrastructure;
+using ATCMediator;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +10,17 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<ICreateProductCommandHandler, CreateProductCommandHandler>();
-builder.Services.AddScoped<IGetProductAllQuery, GetProductAllQuery>();
 builder.Services.AddInfrastructureServices(builder.Configuration);
+
+// builder.Services.AddScoped<IMediator, Mediator>();
+// builder.Services.AddScoped<IQueryHandler<GetProductAllQuery, IEnumerable<Product>>, GetProductAllQueryHandler>();
+
+builder.Services.AddATCMediator(
+    typeof(Program).Assembly, 
+    typeof(GetProductAllQueryHandler).Assembly
+);
+
+
 
 var app = builder.Build();
 

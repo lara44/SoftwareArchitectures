@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HexagonalArchitecture.Domain\HexagonalArchitecture.Domain.csproj" />
+    <ProjectReference Include="..\..\Common\ATCMediator\ATCMediator.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

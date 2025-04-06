@@ -1,5 +1,5 @@
 
-using HexagonalArchitecture.Application.Services.Product.CreateProduct;
+using ATCMediator.Mediator;
 using HexagonalArchitecture.Application.Services.Product.GetProductAll;
 using HexagonalArchitecture.Core.Application.Services.Product.CreateProduct;
 using Microsoft.AspNetCore.Mvc;
@@ -10,26 +10,25 @@ namespace HexagonalArchitecture.WebApi.Controllers
     [Route("hexagonal/api/productos")]
     public class ProductController : ControllerBase
     {
-        private readonly ICreateProductCommandHandler _createProductCommandHandler;
-        private readonly IGetProductAllQuery _getProductAllQuery;
+        private readonly IMediator _mediator;
+
         public ProductController(
-            ICreateProductCommandHandler createProductHandler,
-            IGetProductAllQuery getProductAllQuery
+            IMediator mediator
         )
         {
-            _createProductCommandHandler = createProductHandler;
-            _getProductAllQuery = getProductAllQuery;
+            _mediator = mediator;
         }
+
         [HttpPost]
         public async Task<IActionResult> CrearProducto([FromBody] CreateProductCommand createProduct)
         {
-            await _createProductCommandHandler.Execute(createProduct);
+            await _mediator.SendCommand(createProduct);
             return Ok();
         }
         [HttpGet]
         public async Task<IActionResult> ObtenerProductos()
         {
-            var productos = await _getProductAllQuery.Execute();
+            var productos = await _mediator.SendQuery(new GetProductAllQuery());
             return Ok(productos);
         }
     }
