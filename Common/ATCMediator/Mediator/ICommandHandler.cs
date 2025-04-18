@@ -2,8 +2,8 @@
 
 namespace ATCMediator.Mediator
 {
-    public interface ICommandHandler<in TCommand> where TCommand : ICommand
+    public interface ICommandHandler<in TCommand, TResult> where TCommand : ICommand<TResult>
     {
-        Task Handle(TCommand command);
+        Task<TResult> Handle(TCommand command, CancellationToken cancellationToken = default);
     }
 }

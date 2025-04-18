@@ -22,13 +22,13 @@ namespace HexagonalArchitecture.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> CrearProducto([FromBody] CreateProductCommand createProduct)
         {
-            await _mediator.SendCommand(createProduct);
+            await _mediator.Execute(createProduct);
             return Ok();
         }
         [HttpGet]
         public async Task<IActionResult> ObtenerProductos()
         {
-            var productos = await _mediator.SendQuery(new GetProductAllQuery());
+            var productos = await _mediator.Execute(new GetProductAllQuery());
             return Ok(productos);
         }
     }

@@ -15,7 +15,7 @@ namespace HexagonalArchitecture.Application.Services.Product.GetProductAll
             _productRepository = productRepository;
         }
 
-        public async Task<IEnumerable<Domain.Product.Product>> Handle(GetProductAllQuery query)
+        public async Task<IEnumerable<Domain.Product.Product>> Handle(GetProductAllQuery query, CancellationToken cancellationToken = default)
         {
             var products = await _productRepository.GetAllAsync();
             return products;

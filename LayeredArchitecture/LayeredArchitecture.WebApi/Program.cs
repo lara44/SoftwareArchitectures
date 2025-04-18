@@ -1,7 +1,9 @@
+using ATCMediator;
 using LayeredArchitecture.WebApi.Data;
 using LayeredArchitecture.WebApi.Repositories;
 using LayeredArchitecture.WebApi.Repositories.Interfaces;
 using LayeredArchitecture.WebApi.Services;
+using LayeredArchitecture.WebApi.Services.GetProducts;
 using LayeredArchitecture.WebApi.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Configurar Entity Framework Core con PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddATCMediator(
+    typeof(Program).Assembly, 
+    typeof(GetProductAllQueryHandler).Assembly
+);
 
 // Add services to the container.
 builder.Services.AddControllers();

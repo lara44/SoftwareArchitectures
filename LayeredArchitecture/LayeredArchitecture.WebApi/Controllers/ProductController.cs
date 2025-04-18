@@ -1,6 +1,7 @@
 
-using LayeredArchitecture.WebApi.Data.Entities;
-using LayeredArchitecture.WebApi.Services.Interfaces;
+using ATCMediator.Mediator.Interfaces;
+using LayeredArchitecture.WebApi.Services.CreateProduct;
+using LayeredArchitecture.WebApi.Services.GetProducts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LayeredArchitecture.WebApi.Controllers
@@ -9,25 +10,25 @@ namespace LayeredArchitecture.WebApi.Controllers
     [Route("api/productos")]
     public class ProductController : ControllerBase
     {
-        private readonly IProductService _productService;
+        private readonly IMediator _mediator;
 
         public ProductController(
-            IProductService productService
+            IMediator mediator
         )
         {
-            _productService = productService;
+            _mediator = mediator;
         }
 
         [HttpPost]
-        public async Task<IActionResult> CrearProducto([FromBody] ProductEntity producto)
+        public async Task<IActionResult> CrearProducto([FromBody] CreateProductCommand producto)
         {
-            await _productService.CrearProductoAsync(producto.Name!, producto.Price);
+            await _mediator.SendCommand(producto);
             return Ok();
         }
         [HttpGet]
         public async Task<IActionResult> ObtenerProductos()
         {
-            var productos = await _productService.ObtenerProductosAsync();
+            var productos = await _mediator.SendQuery(new GetProductAllQuery());
             return Ok(productos);
         }
     }

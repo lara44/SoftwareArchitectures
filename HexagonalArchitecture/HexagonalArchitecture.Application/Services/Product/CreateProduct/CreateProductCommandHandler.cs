@@ -5,7 +5,7 @@ using HexagonalArchitecture.Domain.Product.Repository;
 
 namespace HexagonalArchitecture.Application.Services.Product.CreateProduct
 {
-    public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand>
+    public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, Guid>  
     {
         private readonly IProductRepository _productRepository;
 
@@ -14,10 +14,11 @@ namespace HexagonalArchitecture.Application.Services.Product.CreateProduct
             _productRepository = productRepository;
         }
 
-        public async Task Handle(CreateProductCommand command)
+        public async Task<Guid> Handle(CreateProductCommand command, CancellationToken cancellationToken = default)
         {
             var product = Domain.Product.Product.Create(command.Name!, command.Price);
             await _productRepository.AddAsync(product);
+            return product.Id;
         }
     }
 }
