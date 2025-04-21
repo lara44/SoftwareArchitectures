@@ -1,10 +1,10 @@
 
-using ATCMediator.Mediator;
+using ATCMediator.Mediator.Interfaces;
 using HexagonalArchitecture.Domain.Product.Repository;
 
 namespace HexagonalArchitecture.Application.Services.Product.GetProductAll
 {
-    public class GetProductAllQueryHandler : IQueryHandler<GetProductAllQuery, IEnumerable<Domain.Product.Product>>
+    public class GetProductAllQueryHandler : IAtcRequestHandler<GetProductAllQuery, IEnumerable<Domain.Product.Product>>
     {
         private readonly IProductRepository _productRepository;
 
@@ -15,7 +15,7 @@ namespace HexagonalArchitecture.Application.Services.Product.GetProductAll
             _productRepository = productRepository;
         }
 
-        public async Task<IEnumerable<Domain.Product.Product>> Handle(GetProductAllQuery query, CancellationToken cancellationToken = default)
+        public async Task<IEnumerable<Domain.Product.Product>> HandlerAsync(GetProductAllQuery request, CancellationToken cancellationToken = default)
         {
             var products = await _productRepository.GetAllAsync();
             return products;

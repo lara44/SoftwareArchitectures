@@ -1,9 +1,9 @@
 
-using ATCMediator.Mediator;
+using static ATCMediator.Mediator.Interfaces.IAtcRequest;
 
 namespace HexagonalArchitecture.Application.Services.Product.GetProductAll
 {
-    public class GetProductAllQuery : IQuery<IEnumerable<Domain.Product.Product>> 
+    public class GetProductAllQuery : IAtcRequest<IEnumerable<Domain.Product.Product>> 
     {
     }
 }
